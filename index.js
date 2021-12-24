@@ -1,10 +1,10 @@
 class airflight {
-    static root_url = 'https://flask-flight-radar-apps.azurewebsites.net';
+    static root_url = 'http://flask-flight-radar-apps.azurewebsites.net';
     //details
     static async getAirportDetails({
         url=`${airflight.root_url}`, 
         iata='BKS', 
-        pages=0}={}
+        pages=1}={}
         ){
         try{
             const response = await fetch(`${url}/${iata}/details/${pages}`);
@@ -18,7 +18,7 @@ class airflight {
     static async getAirportArrivals({
         url=`${airflight.root_url}`, 
         iata='BKS', 
-        pages=0}={}){
+        pages=1}={}){
         try{
             const response = await fetch(`${url}/${iata}/arrivals/${pages}`);
             const responseJSON = await response.json();
@@ -31,7 +31,7 @@ class airflight {
     static async getAirportDepartures({
         url=`${airflight.root_url}`, 
         iata='BKS', 
-        pages=0}={}){
+        pages=1}={}){
         try{
             const response = await fetch(`${url}/${iata}/departures/${pages}`);
             const responseJSON = await response.json();
@@ -44,7 +44,7 @@ class airflight {
     static async getAirportOnground({
         url=`${airflight.root_url}`, 
         iata='BKS', 
-        pages=0}={}){
+        pages=1}={}){
         try{
             const response = await fetch(`${url}/${iata}/onground/${pages}`);
             const responseJSON = await response.json();
@@ -57,7 +57,7 @@ class airflight {
     static async getAirportWeather({
         url=`${airflight.root_url}`, 
         iata='BKS', 
-        pages=0}={}){
+        pages=1}={}){
         try{
             const response = await fetch(`${url}/${iata}/weather/${pages}`);
             const responseJSON = await response.json();
@@ -70,9 +70,9 @@ class airflight {
     static async getAirportStat({
         url=`${airflight.root_url}`, 
         iata='BKS', 
-        pages=0}={}){
+        pages=1}={}){
         try{
-            const response = await fetch(`${url}/${iata}/stat/${pages}`, iata='BKS', pages=0);
+            const response = await fetch(`${url}/${iata}/stat/${pages}`, iata='BKS', pages=1);
             const responseJSON = await response.json();
             return responseJSON;
         } catch(err){
