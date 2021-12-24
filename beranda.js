@@ -1,5 +1,5 @@
 class statflight {
-    static root_url = 'http://127.0.0.1:5000';
+    static root_url = 'https://flask-flight-radar-apps.azurewebsites.net';
     //details
     static async getAirportDetails({
         url=`${statflight.root_url}`, 
